@@ -1,0 +1,18 @@
+{
+  "name": "Django Order System",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "batisteo.vscode-django",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.defaultInterpreterPath": "/usr/local/bin/python"
+  },
+  "forwardPorts": [8000],
+  "postCreateCommand": "python manage.py migrate"
+}
