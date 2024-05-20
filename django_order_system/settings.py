@@ -31,12 +31,14 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'api',
     'corsheaders',
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 REST_USE_JWT = True

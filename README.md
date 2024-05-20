@@ -3,6 +3,6 @@ vscode でプロジェクトを開き左下 dev container のメニューから 
 サーバーが起動しない場合は再度 rebuiuld container を選択
 
 open api yml 生成
-python manage.py generateschema --file schema.yml
+python manage.py spectacular --file schema.yml
 
 package 追加手順
