@@ -1,6 +1,10 @@
 Django>=3.2,<4.0
-djangorestframework
-dj-rest-auth
-djangorestframework-simplejwt
-psycopg2-binary
-gunicorn
+djangorestframework==3.14.0
+dj-rest-auth==2.2.8
+djangorestframework-simplejwt==5.2.2
+psycopg2-binary==2.9.1
+gunicorn==20.1.0
+PyYAML==6.0.1
+uritemplate==4.1.1
+inflection==0.5.1
+django-cors-headers==3.13.0

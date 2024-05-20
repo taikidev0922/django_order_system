@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dj_rest_auth',
     'api',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -38,6 +39,8 @@ REST_FRAMEWORK = {
     ],
 }
 
+REST_USE_JWT = True
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
@@ -45,7 +48,7 @@ AUTHENTICATION_BACKENDS = [
 BASE_USE_JWT = True
 
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',),
+    'AUTH_HEADER_TYPES': ('JWT', ),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
 }
 
@@ -57,6 +60,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_order_system.middleware.LogRequestMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:3001',  # localhost:3001からのリクエストを許可
 ]
 
 ROOT_URLCONF = 'django_order_system.urls'
