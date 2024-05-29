@@ -70,6 +70,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:3001',  # localhost:3001からのリクエストを許可
+    'http://localhost:8000',
 ]
 
 ROOT_URLCONF = 'django_order_system.urls'
