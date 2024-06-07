@@ -4,6 +4,8 @@ FROM python:3.9-slim
 # 作業ディレクトリを設定
 WORKDIR /app
 
+ENV PYTHONUNBUFFERED=1
+
 # システムの依存関係をインストール
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -16,6 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # プロジェクトのソースコードをコピー
 COPY . /app
+
 
 # コンテナが起動したときに実行するコマンド
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "django_order_system.wsgi:application"]
